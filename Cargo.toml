@@ -1,0 +1,19 @@
+[workspace]
+members = [
+  "ping-player",
+  "daemon"
+]
+
+[[bin]]
+name = "daemon-choir"
+test = false
+bench = false
+
+
+[workspace.package]
+name = "daemon-choir"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cpal = {version = "0.15.3", features = ["jack" ]}
