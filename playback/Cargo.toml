@@ -1,4 +1,10 @@
 [package]
-name = "playback"
-version = "0.1.0"
+name = "daemon-choir-playback"
 edition = "2021"
+
+[dependencies]
+cpal = {version = "0.15.3", features = ["jack" ]}
+
+
+[lints]
+workspace = true

@@ -46,6 +46,10 @@
           sccache
 
           cargo-expand
+
+          pkg-config
+          alsa-lib
+          libjack2
         ];
         manifest = (pkgs.lib.importTOML ./Cargo.toml).package;
       in with pkgs; {

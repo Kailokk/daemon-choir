@@ -1,19 +1,25 @@
-[workspace]
-members = [
-  "ping-player",
-  "daemon"
-]
-
-[[bin]]
-name = "daemon-choir"
-test = false
-bench = false
-
-
-[workspace.package]
+[package]
 name = "daemon-choir"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "daemon-choir"
+
+[workspace]
+members = ["playback"]
+
 [dependencies]
-cpal = {version = "0.15.3", features = ["jack" ]}
+thiserror = "1.0.64"
+daemon-choir-playback = {path = "playback/"}
+
+
+[workspace.lints.clippy]
+doc_markdown = "warn"
+manual_let_else = "warn"
+match_same_arms = "warn"
+redundant_closure_for_method_calls = "warn"
+redundant_else = "warn"
+type_complexity = "warn"
+undocumented_unsafe_blocks = "warn"
+unwrap_or_default = "deny"
